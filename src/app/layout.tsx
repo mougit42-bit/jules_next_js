@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 import { AuthProvider } from "@/context/AuthContext";
@@ -20,14 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-zinc-50 font-sans dark:bg-black`}>
         <AuthProvider>
           <CartProvider>
-            <div className="flex flex-col min-h-screen">
-              <Header />
-              <main className="flex-grow container mx-auto px-4">{children}</main>
-              <Footer />
-            </div>
+            <Navbar />
+            <main className="pt-20">{children}</main>
+            <Footer />
           </CartProvider>
         </AuthProvider>
       </body>
