@@ -3,31 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { products } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
+import Hero from '@/components/Hero';
 
 const HomePage = () => {
   const featuredProducts = products.slice(0, 3);
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative h-96 rounded-lg overflow-hidden my-8">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt="Jules Beauty"
-          layout="fill"
-          objectFit="cover"
-          className="z-0"
-          unoptimized
-        />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-40">
-          <h1 className="text-4xl font-bold text-white mb-4">Welcome to Jules Beauty</h1>
-          <p className="text-xl text-white mb-8">Discover Your Natural Glow</p>
-          <Link href="/products" className="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600">
-            Shop Now
-          </Link>
-        </div>
-      </section>
-
+      <Hero />
       {/* Featured Products Section */}
       <section className="my-12">
         <h2 className="text-3xl font-bold text-center mb-8">Featured Products</h2>
